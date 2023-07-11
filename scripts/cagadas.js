@@ -76,7 +76,8 @@ fetch("https://sheets.googleapis.com/v4/spreadsheets/1uULL2ZIjum7VEx1pWGFIM9zoHa
         {name:data.values[3][0], cagadas:parseInt(data.values[3][1])},
         {name:data.values[4][0], cagadas:parseInt(data.values[4][1])}
     ];
-    ;
+    
+
 
     $dia_mas_cagadas = $datos_max_cagadas.sort((a, b) => {
         if(a.cagadas==b.cagadas){
@@ -92,7 +93,6 @@ fetch("https://sheets.googleapis.com/v4/spreadsheets/1uULL2ZIjum7VEx1pWGFIM9zoHa
 fetch("https://sheets.googleapis.com/v4/spreadsheets/1uULL2ZIjum7VEx1pWGFIM9zoHa96ot6zMSeWutABC6M/values/total?key=AIzaSyB9vIKNAaEYTQ2_Akh48VMdNioidhBIl-o")
 .then(res => res.json())
 .then(data => {
-    console.log(data)
     $datos_media_cagadas = [
         {name:data.values[1][0], cagadas:parseFloat(data.values[1][2].replace(',', '.'))},
         {name:data.values[2][0], cagadas:parseFloat(data.values[2][2].replace(',', '.'))},
@@ -101,7 +101,6 @@ fetch("https://sheets.googleapis.com/v4/spreadsheets/1uULL2ZIjum7VEx1pWGFIM9zoHa
         {name:data.values[5][0], cagadas:parseFloat(data.values[5][2].replace(',', '.'))}
     ];
     
-    console.log($datos_media_cagadas)
 
     $datos_media_mes = $datos_media_cagadas.sort((a, b) => {
         if(a.cagadas==b.cagadas){
@@ -117,7 +116,6 @@ fetch("https://sheets.googleapis.com/v4/spreadsheets/1uULL2ZIjum7VEx1pWGFIM9zoHa
 fetch("https://sheets.googleapis.com/v4/spreadsheets/1uULL2ZIjum7VEx1pWGFIM9zoHa96ot6zMSeWutABC6M/values/total?key=AIzaSyB9vIKNAaEYTQ2_Akh48VMdNioidhBIl-o")
 .then(res => res.json())
 .then(data => {
-    console.log(data)
     $datos_total = [
         {name:data.values[1][0], cagadas:parseFloat(data.values[1][1])},
         {name:data.values[2][0], cagadas:parseFloat(data.values[2][1])},
@@ -126,7 +124,6 @@ fetch("https://sheets.googleapis.com/v4/spreadsheets/1uULL2ZIjum7VEx1pWGFIM9zoHa
         {name:data.values[5][0], cagadas:parseFloat(data.values[5][1])}
     ];
     
-    console.log($datos_total_cagadas)
 
     $datos_total_cagadas = $datos_total.sort((a, b) => {
         if(a.cagadas==b.cagadas){
@@ -157,7 +154,6 @@ fetch("https://sheets.googleapis.com/v4/spreadsheets/1uULL2ZIjum7VEx1pWGFIM9zoHa
 
 
 
-    console.log($daniel)
 
     for(let i = 1; i < $months.length; i++) {
         $datos_mes_actual.push([
@@ -257,9 +253,9 @@ function masCagadasEnUnDia(){
 
     $container_month = document.getElementById("classification")
     $container_month.innerHTML = ``;
-    for(let i = 0; i < $cagadas_mes.length; i++) {
+    for(let i = 0; i < $dia_mas_cagadas.length; i++) {
 
-        upperName = $cagadas_mes[i].name.toUpperCase();
+        upperName = $dia_mas_cagadas[i].name.toUpperCase();
 
         $background_color = colors[i];
 
@@ -283,7 +279,6 @@ function ordenarCagadasMesActual(){
     $ranking_name = document.getElementsByClassName("participantes-header");
     $ranking_name[0].innerHTML = month_name[date.getMonth()].charAt(0).toUpperCase() + month_name[date.getMonth()].slice(1);
 
-    console.log($datos_max_cagadas)
 
     $cagadas_mes = $datos_mes_actual[date.getMonth()].sort((a, b) => {
         if(a.cagadas==b.cagadas){
@@ -294,7 +289,6 @@ function ordenarCagadasMesActual(){
         } 
         return 1
     } )
-    console.log($cagadas_mes)
     $container_month = document.getElementById("classification")
     $container_month.innerHTML = ``;
     time_animation = 1/$cagadas_mes.length;
