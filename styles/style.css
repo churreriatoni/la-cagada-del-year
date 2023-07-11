@@ -1,0 +1,185 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #b1aca8!important;
+    background-image: url("https://www.transparenttextures.com/patterns/brick-wall.png");
+}
+
+
+#title{
+    font-size: 80px;
+    font-family: 'Rubik', sans-serif;
+    text-align: center;
+    text-shadow: 0px 0px 4px white;
+}
+
+
+header{
+    background-color: rgb(165, 129, 129);
+    width: 90%;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+h1{
+    margin: 0px;
+    padding: 10px 0;
+    
+}
+
+@keyframes fadeIn{
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+}
+
+@keyframes fadeInLeft{
+    0% {transform: translateX(-200px);}
+    100% {transform: translateX(0px);}
+}
+
+
+#participant-name{
+    font-size: 50px;
+    padding: 10px;
+    box-shadow: 0px 4px 4px 2px black;
+    width: fit-content;
+}
+
+.participant-box{
+    width: 400px;
+}
+
+.participant-box-cagadas{
+    width: 700px;
+}
+
+.participant-container{
+    display: flex;
+    flex-direction: row;
+}
+
+.participant-container-cagadas{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+
+}
+
+.participantes-header{
+    margin-top: 20px;
+    background-color: black;
+    width: auto;
+    color: white;
+    font-size: 50px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+}
+
+.rankings-header{
+    background-color: black;
+    width: 100%;
+    color: white;
+    font-size: 40px;
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.header-container{
+    margin-top: 50px;
+}
+
+.buttons{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.mierdin{
+    display: flex;
+    align-items: end;
+}
+
+.left-card-column{
+    position: relative;
+}
+
+.right-card-column{
+    position: relative;
+}
+
+.position{
+    box-shadow: 0px 4px 4px 2px black;
+    width: auto;
+    position: absolute;
+    right: 0;
+    justify-content: center;
+}
+
+#buttons-rankings{
+
+    margin-top: 50px;
+    width: 100%; 
+    height: auto;
+    display: flex; 
+    flex-direction: column; 
+    align-items: center;
+    border: 5px solid black;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    box-shadow: 0px 0px 5px 3px black;
+    background-color: rgb(150, 100, 100)!important;
+    background-image: url("https://www.transparenttextures.com/patterns/brick-wall.png");
+
+}
+
+.btn-rankings{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 70%;
+    box-shadow: 0px 0px 5px 3px black;
+}
+
+.btn-rankings:hover{
+    box-shadow: 0px 0px 10px cyan;
+}
+
+.nav-item:hover{
+    cursor: pointer;
+}
+
+.navbar{
+    box-shadow: 0px 5px 10px black!important;
+}
+
+
+.card{
+    width: 100%!important;
+    height: auto!important;
+    border-radius: 15px!important;
+    border: 3px solid black!important;
+}
+
+#classification{
+    display: grid;
+    grid-template-columns: 
+    repeat(
+        auto-fit,
+        minmax(256px, 1fr)
+    );
+    gap: 80px;
+    padding: 20px;
+}
+
+.card-body{
+    border: 3px solid black;
+    border-top: 5px solid black!important;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    background-image: linear-gradient(to right, #d3cce3, #e9e4f0); 
+    box-shadow: 0px -5px 10px black;
+}
