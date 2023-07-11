@@ -267,7 +267,6 @@ function masCagadasEnUnDia(){
                 <div style="display: flex; justify-content: space-between;"><p style="text-align: end; font-size:30px;" class="card-text">${$dia_mas_cagadas[i].cagadas}</p> <p style="text-align: end; font-size:30px; font-weight:bold;">${i+1}</p></div>
             </div>
         </div>
-        
         `;      
     }
 }
